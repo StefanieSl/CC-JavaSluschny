@@ -20,13 +20,15 @@ public class DatentypenAufgaben {
 		boolean b = true;
 		System.out.println("bool = " + b);
 		
-		//Rechen-Operationen
-		
-		int addition(int zahl1, int zahl2) {
-			int ergebnis = zahl1 + zahl2;
-			System.out.println(ergebnis);
-		}
+		additionAufgabe(3,2);
 		
 	}
 
+	//Rechen-Operationen
+	
+	public static int additionAufgabe(int zahl1, int zahl2) {
+		int ergebnis = zahl1 + zahl2;
+		System.out.println(ergebnis);
+		return ergebnis;
+	}
 }
