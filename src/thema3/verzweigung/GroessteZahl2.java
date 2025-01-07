@@ -2,7 +2,7 @@ package thema3.verzweigung;
 
 import java.util.Scanner;
 
-public class GroessteZahl1 {
+public class GroessteZahl2 {
 
 	public static void main(String[] args) {
 
@@ -18,15 +18,10 @@ public class GroessteZahl1 {
 		System.out.println("3. Zahl: "); 
 		int zahl3 = scanner3.nextInt(); 
 
-		if ((zahl1 > zahl2) && (zahl1 > zahl3)) { 
-		System.out.println(zahl1 + " ist die größte Zahl"); 
-
-		} else if ((zahl2 > zahl1) && (zahl2 > zahl3)) { 
-		System.out.println(zahl2 + " ist die größte Zahl"); 
-
-		} else { 
-		System.out.println(zahl3 + " ist die größte Zahl"); 
-		} 
+		int groessereZahl1 = Math.max(zahl1, zahl2);
+		int groessereZahl2 = Math.max(groessereZahl1, zahl3);
+		
+		System.out.println("Die größte Zahl ist die " + groessereZahl2);
 
 		scanner1.close(); 
 		scanner2.close(); 
