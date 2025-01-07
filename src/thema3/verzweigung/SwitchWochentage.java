@@ -14,31 +14,31 @@ public class SwitchWochentage {
 		switch (tag) { 
 
 		case 1:
-			System.out.println("Montag"); 
+			System.out.println("Heute ist Montag"); 
 			break; 
 
 		case 2: 
-			System.out.println("Dienstag");
+			System.out.println("Heute ist Dienstag");
 			break; 
 
 		case 3: 
-			System.out.println("Mittwoch"); 
+			System.out.println("Heute ist Mittwoch"); 
 			break; 
 
 		case 4: 
-			System.out.println("Donnerstag");
+			System.out.println("Heute ist Donnerstag");
 			break; 
 
 		case 5: 
-			System.out.println("Freitag"); 
+			System.out.println("Heute ist Freitag"); 
 			break; 
 
 		case 6: 
-			System.out.println("Samstag"); 
+			System.out.println("Heute ist Samstag"); 
 			break; 
 
 		case 7: 
-			System.out.println("Sonntag"); 
+			System.out.println("Heute ist Sonntag"); 
 			break; 
 
 		default: 

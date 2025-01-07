@@ -18,6 +18,8 @@ public class GroessteZahl2 {
 		System.out.println("3. Zahl: "); 
 		int zahl3 = scanner3.nextInt(); 
 
+		//hier wird keine Switch-Anweisung mehr benötigt...
+		
 		int groessereZahl1 = Math.max(zahl1, zahl2);
 		int groessereZahl2 = Math.max(groessereZahl1, zahl3);
 		
