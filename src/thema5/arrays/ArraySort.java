@@ -13,11 +13,12 @@ public class ArraySort {
 			feld1GeradeZahlen[i] = (int) (Math.random() * 50) * 2;
 			
 			feld2AufsteigendSortiert[i] = (int) (Math.random() * 100);
-			Arrays.sort(feld2AufsteigendSortiert);
-
 		}
+		
+		Arrays.sort(feld2AufsteigendSortiert);
 	
 		System.out.print(Arrays.toString(feld1GeradeZahlen));
+		System.out.println("");
 		System.out.print(Arrays.toString(feld2AufsteigendSortiert));
 		
 		//Alternativ:

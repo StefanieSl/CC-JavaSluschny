@@ -16,7 +16,7 @@ public class Geldautomat {
 		if (abheben <= guthaben) {
 			System.out.println("Es werden " + abheben + " Euro ausgezahlt.");
 			guthaben = guthaben - abheben;
-			System.out.println("Ihr Guthaben beträgt nun " + guthaben + " Euro");
+			System.out.println("Ihr Guthaben beträgt nun " + guthaben + " Euro.");
 		} else {
 			System.out.println("Keine Auszahlung möglich! Der angegebene Betrag übersteigt Ihr Guthaben.");
 		}
