@@ -5,24 +5,25 @@ public class Kunde {
 	private String kundenID;
 	private String nameKD;
 	private String adresse;
-	
-	//Konstruktor:
+
+	// Konstruktor:
 	public Kunde(String kundenID, String nameKD, String adresse) {
 		this.kundenID = kundenID;
 		this.nameKD = nameKD;
 		this.adresse = adresse;
 	}
-	
+
 	// toString-Methode:
 	@Override
 	public String toString() {
-		return "Kunde: " + nameKD + ", Adresse: " + adresse;
+		return "KundenID:" + kundenID + "Kunde: " + nameKD + ", Adresse: " + adresse;
 	}
-	
+
 	// Getter & Setter:
 	public String getKundenID() {
 		return kundenID;
 	}
+
 	public void setKundenID(String kundenID) {
 		this.kundenID = kundenID;
 	}
@@ -30,6 +31,7 @@ public class Kunde {
 	public String getNameKD() {
 		return nameKD;
 	}
+
 	public void setNameKD(String nameKD) {
 		this.nameKD = nameKD;
 	}
@@ -37,6 +39,7 @@ public class Kunde {
 	public String getAdresse() {
 		return adresse;
 	}
+
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
