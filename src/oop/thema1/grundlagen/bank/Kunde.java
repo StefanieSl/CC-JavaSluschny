@@ -12,6 +12,13 @@ public class Kunde {
 		this.nameKD = nameKD;
 		this.adresse = adresse;
 	}
+	
+	//Default-Konstruktor:
+	public Kunde() {
+		this.kundenID = "";
+		this.nameKD = "";
+		this.adresse = "";
+	}
 
 	// toString-Methode:
 	@Override

@@ -3,8 +3,8 @@ package oop.thema1.grundlagen.bank;
 public class Bankkonto {
 
 	private String kontonummer;
-	private double kontostand;
-	private Kunde kontoinhaber;
+	public double kontostand;
+	protected Kunde kontoinhaber;
 
 	// Konstruktor:
 	public Bankkonto(String kontonummer, double kontostand, Kunde kontoinhaber) {
@@ -47,14 +47,6 @@ public class Bankkonto {
 
 	public void setKontonummer(String kontonummer) {
 		this.kontonummer = kontonummer;
-	}
-
-	public double getKontostand() {
-		return kontostand;
-	}
-
-	public void setKontostand(double kontostand) {
-		this.kontostand = kontostand;
 	}
 
 	public Kunde getKontoinhaber() {
