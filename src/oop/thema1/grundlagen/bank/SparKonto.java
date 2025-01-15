@@ -9,7 +9,7 @@ public class SparKonto extends Bankkonto {
 		super(kontonummer, kontostand, kontoinhaber);
 	}
 
-	//Methode berechnet Kontostand nach einem Jahr
+	// Methode berechnet Kontostand nach einem Jahr
 	public void zinsenBerechnen() {
 		System.out.println("Aktueller Kontostand: " + this.kontostand + " EUR.");
 		this.kontostand = this.kontostand * zinsSatz;

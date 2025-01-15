@@ -30,7 +30,7 @@ public class BankHauptProgramm {
 		// Teil 1.2 - Aktie:
 		Aktie aktie1 = new Aktie("AAPL123", "Apple Inc.", 150.0);
 		Aktie aktie2 = new Aktie("MSFT456", "Microsoft Corp.", 280.0);
-		
+
 		System.out.println("Aktieninformationen:");
 		System.out.println(aktie1);
 		System.out.println(aktie2);
@@ -38,10 +38,10 @@ public class BankHauptProgramm {
 		System.out.println("");
 
 		// Teil 1.3 - Darlehensvertrag
-	
+
 		DarlehensVertrag darlehensvertrag1 = new DarlehensVertrag("D001", kunde1, 10000.0, 5.0, 12);
 		System.out.println(darlehensvertrag1);
-		
+
 		double monatlicheRate = DarlehensVertrag.berechneMonatlicheRate(10000.0, 5.0);
 		System.out.println("Monatliche Rate: " + monatlicheRate + " EUR");
 

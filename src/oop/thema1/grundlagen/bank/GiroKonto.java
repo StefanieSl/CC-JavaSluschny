@@ -13,14 +13,16 @@ public class GiroKonto extends Bankkonto {
 	// Methode abheben überschreiben:
 
 	@Override
-	public void abheben(double betrag) {
+	public boolean abheben(double betrag) {
 		if (kontostand - betrag >= dispoLimit) {
 			System.out.println("Auszahlung über " + betrag + " Euro.");
 			this.kontostand -= betrag;
 			System.out.println("Neuer Kontostand: " + kontostand + " Euro.");
+			return true;
 		} else {
 			System.err.println("Fehler: Auszahlung nicht möglich.\nAktueller Kontostand: " + kontostand
 					+ "\nDispo-Limit beträgt " + dispoLimit + " EUR.");
+			return false;
 		}
 	}
 

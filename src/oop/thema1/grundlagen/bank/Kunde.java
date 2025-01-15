@@ -12,12 +12,9 @@ public class Kunde {
 		this.nameKD = nameKD;
 		this.adresse = adresse;
 	}
-	
-	//Default-Konstruktor:
-	public Kunde() {
-		this.kundenID = "";
-		this.nameKD = "";
-		this.adresse = "";
+
+	public Kunde(String kundenID) {
+		this.kundenID = kundenID;
 	}
 
 	// toString-Methode:
