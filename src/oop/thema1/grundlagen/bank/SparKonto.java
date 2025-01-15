@@ -2,19 +2,18 @@ package oop.thema1.grundlagen.bank;
 
 public class SparKonto extends Bankkonto {
 
-	protected static double zinsSatz;
+	protected static double zinsSatz = 0.02;
 
 	// Konstruktor:
-	public SparKonto(String kontonummer, double kontostand, Kunde kontoinhaber, double zinsSatz) {
+	public SparKonto(String kontonummer, double kontostand, Kunde kontoinhaber) {
 		super(kontonummer, kontostand, kontoinhaber);
-		SparKonto.zinsSatz = zinsSatz;
 	}
 
 	//Methode berechnet Kontostand nach einem Jahr
 	public void zinsenBerechnen() {
-		System.out.println("Aktueller Kontostand: " + kontostand);
-		kontostand = kontostand + kontostand * zinsSatz * 0.01;
-		System.out.println("Zinssatz: " + zinsSatz + "\nKontostand nach einem Jahr: " + kontostand);
+		System.out.println("Aktueller Kontostand: " + this.kontostand + " EUR.");
+		this.kontostand = this.kontostand * zinsSatz;
+		System.out.println("Zinssatz: " + zinsSatz + "\nZinsen nach einem Jahr: " + kontostand);
 	}
 
 	@Override

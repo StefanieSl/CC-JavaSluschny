@@ -2,39 +2,34 @@ package oop.thema1.grundlagen.bank;
 
 public class Bank {
 
-	private static String nameBK;
-	private static int anzahlKonten = 0;
+	private String nameBK;
+	private int anzahlKonten = 2;
 
 	// Konstruktor:
 	public Bank(String nameBK) {
-		Bank.nameBK = "unbekannt";
+		this.nameBK = nameBK;
 	}
 
-	public static void printBankInfo() {
-		System.out.println("Name der Bank: " + nameBK);
-		System.out.println("Anzahl der Konten: " + anzahlKonten);
-	}
-
-	// Methode, um die Anzahl der Konten zu erhöhen:
-	public static void kontoErstellt() {
-		anzahlKonten++;
+	public void printBankInfo() {
+		System.out.println("Name der Bank: " + this.nameBK);
+		System.out.println("Anzahl der Konten: " + this.anzahlKonten);
 	}
 
 	// Getters & Setters
-	public static String getNameBK() {
-		return nameBK;
+	public String getNameBK() {
+		return this.nameBK;
 	}
 
-	public static void setNameBK(String nameBK) {
-		Bank.nameBK = nameBK;
+	public void setNameBK(String nameBK) {
+		this.nameBK = nameBK;
 	}
 
-	public static int getAnzahlKonten() {
-		return anzahlKonten;
+	public int getAnzahlKonten() {
+		return this.anzahlKonten;
 	}
 
-	public static void setAnzahlKonten(int anzahlKonten) {
-		Bank.anzahlKonten = anzahlKonten;
+	public void setAnzahlKonten(int anzahlKonten) {
+		this.anzahlKonten = anzahlKonten;
 	}
 
 }

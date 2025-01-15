@@ -3,7 +3,7 @@ package oop.thema1.grundlagen.bank;
 public class Bankkonto {
 
 	private String kontonummer;
-	public double kontostand;
+	protected double kontostand;
 	protected Kunde kontoinhaber;
 
 	// Konstruktor:
@@ -12,8 +12,6 @@ public class Bankkonto {
 		this.kontostand = kontostand;
 		this.kontoinhaber = kontoinhaber;
 
-		// Aufruf aus Bank - Methode zählt Konten ++
-		Bank.kontoErstellt();
 	}
 
 	// Methoden:
