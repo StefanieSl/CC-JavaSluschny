@@ -1,4 +1,4 @@
-package oop.thema.grundlagen.monarchie;
+package oop.thema2.vererbung.monarchie;
 
 public class PrinceWilliam extends PrinceCharles {
 
