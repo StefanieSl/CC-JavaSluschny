@@ -2,3 +2,10 @@
 /BankHauptProgramm.class
 /Bankkonto.class
 /Kunde.class
+/Aktie.class
+/DarlehensVertrag.class
+/GeschaeftsKunde.class
+/GiroKonto.class
+/SparKonto.class
+/Transaktion.class
+/TransaktionHauptProgramm.class
