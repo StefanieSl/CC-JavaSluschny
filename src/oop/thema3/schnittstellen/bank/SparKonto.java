@@ -10,12 +10,12 @@ public class SparKonto extends Bankkonto implements Zinsfaehig {
 
 	@Override
 	public void zinsenBerechnen() {
-		System.out.println("Zinsen: " + this.kontostand * zinssatz);
+		this.kontostand += this.kontostand * zinssatz;
 	}
 
 	@Override
 	public void abrechnung() {
-		this.kontostand += this.kontostand * zinssatz;
+		zinsenBerechnen();
 	}
 
 }

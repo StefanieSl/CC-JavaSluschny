@@ -11,15 +11,16 @@ public class GiroKonto extends Bankkonto implements Ueberziehbar {
 
 	@Override
 	public void ueberziehungPruefen() {
-
+		if (this.kontostand < 0 && this.kontostand >= dispoLimit) {
+			this.kontostand -= (this.kontostand * -1) * zinsSatz;
+		} else if (this.kontostand < dispoLimit) {
+			
+		}
 	}
 
 	@Override
 	public void abrechnung() {
-		if (this.kontostand < dispoLimit) {
-			this.kontostand -= this.kontostand * zinsSatz;
-		}
-
+		ueberziehungPruefen();
 	}
 
 }

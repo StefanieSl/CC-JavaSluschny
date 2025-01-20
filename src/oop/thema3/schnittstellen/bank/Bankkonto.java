@@ -2,8 +2,8 @@ package oop.thema3.schnittstellen.bank;
 
 public abstract class Bankkonto {
 
-	String kontonummer;
-	double kontostand;
+	private String kontonummer;
+	protected double kontostand;
 	
 	public Bankkonto(String kontonummer, double kontostand) {
 		super();
