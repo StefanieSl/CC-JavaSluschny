@@ -4,34 +4,42 @@ import java.util.ArrayList;
 
 public class Bank {
 
-	ArrayList<Bankkonto> konten;
+	private ArrayList<Bankkonto> konten; // zuerst null, daher unten befüllt mit neuer ArrayList
 
-    public Bank() {
-        konten = new ArrayList<>();
-    }
-    
-	void kontoHinzufuegen(Bankkonto konto) {
+	// Initialisierung, damit es keine Nullpointer Exception gibt, weil sonst
+	// konten=0 bei 'konten.add(konto)' --> gibt Fehler
+	public Bank() {
+		konten = new ArrayList<Bankkonto>();
+	}
+
+	public void kontoHinzufuegen(Bankkonto konto) {
 		konten.add(konto);
 		System.out.println("Konto hinzugefügt:");
 		System.out.println(konto);
 	}
 
-	void kontoEntfernen(String kontonummer) {
+	public void kontoEntfernen(String kontonummer) {
+		// um zu prüfen, ob die Kontonummer gefunden wurde:
+		boolean kontoGefunden = false;
+		
 		for (int i = 0; i < konten.size(); i++) {
-			if (konten.get(i).getKontonummer().equals(kontonummer)) {
+			if (konten.get(i).kontonummer.equals(kontonummer)) {
 				konten.remove(i);
-				System.out.println("Konto " + kontonummer + " wurde entfernt.");
-				return;
+				System.out.println("Konto mit Kontonr. " + kontonummer + " wurde entfernt.\n");
+				kontoGefunden = true;
+				break;
 			}
 		}
-		System.out.println("Konto " + kontonummer + " wurde nicht gefunden.");
+		if (!kontoGefunden) {
+	        System.out.println("Konto mit Kontonr. " + kontonummer + " wurde nicht gefunden.\n");
+		}
 	}
 
-	Bankkonto getKonto(String kontonummer) {
-		for (Bankkonto konto : konten) {
-			if (konto.getKontonummer().equals(kontonummer)) {
+	public Bankkonto getKonto(String kontonummer) {
+		for (Bankkonto konto : konten) { // alternativ: for (int i = 0; ...) s.o.
+			if (konto.kontonummer.equals(kontonummer)) {
 				System.out.println("Gefundenes Konto:\n" + konto);
-				return konto;
+				return konto; // alternativ: System.out.println(konten.get(i));
 			} else {
 				System.out.println("Konto mit Kontonr. " + kontonummer + " wurde nicht gefunden.");
 				return null;
@@ -47,8 +55,8 @@ public class Bank {
 		}
 
 		System.out.println("Alle Konten:");
-		for (Bankkonto konto : konten) {
-			System.out.println(konto);
+		for (Bankkonto konto : konten) { // alternativ: for (int i = 0; ...) s.o.
+			System.out.println(konto); // alternativ: System.out.println(konten.get(i));
 		}
 	}
 }

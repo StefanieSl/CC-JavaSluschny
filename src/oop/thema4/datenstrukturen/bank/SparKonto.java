@@ -6,7 +6,7 @@ public class SparKonto extends Bankkonto implements Zinsfaehig {
 		super(kontonummer, kontostand);
 	}
 
-	private static double zinssatz = 0.02;
+	private final double zinssatz = 0.02;
 
 	@Override
 	public void zinsenBerechnen() {

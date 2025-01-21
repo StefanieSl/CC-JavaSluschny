@@ -19,15 +19,20 @@ public class Hauptprogramm {
 
 		Bank bank = new Bank();
 
-		bank.kontoHinzufuegen(new SparKonto("111111", 3000));
-		bank.kontoHinzufuegen(new GiroKonto("222222", 1500));
-		bank.kontoHinzufuegen(new SparKonto("333333", 5300));
-		bank.kontoHinzufuegen(new GiroKonto("444444", -600));
+		SparKonto spari1 = new SparKonto("111111", 3000);
+		GiroKonto giro1 = new GiroKonto("222222", 1500, -500);
+		SparKonto spari2 = new SparKonto("333333", 5300);
+		GiroKonto giro2 = new GiroKonto("444444", -600, -750);
+		
+		bank.kontoHinzufuegen(spari1);
+		bank.kontoHinzufuegen(giro1);
+		bank.kontoHinzufuegen(spari2);
+		bank.kontoHinzufuegen(giro2);
 
 		bank.zeigeAlleKonten();
 
 		bank.kontoEntfernen("111111");
-		bank.kontoEntfernen("333333\n");
+		bank.kontoEntfernen("333333");
 
 		bank.zeigeAlleKonten();
 
