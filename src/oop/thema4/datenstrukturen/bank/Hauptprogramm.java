@@ -1,5 +1,7 @@
 package oop.thema4.datenstrukturen.bank;
 
+import java.util.Scanner;
+
 public class Hauptprogramm {
 
 	public static void main(String[] args) {
@@ -16,34 +18,105 @@ public class Hauptprogramm {
 //
 //		System.out.println("Mit Zinsen: " + spari);
 //		System.out.println("Mit Gebühren: " + giro);
+//
+		// Neue Bank mit neuen Bankkonten manuell erstellen:
+//		Bank bank = new Bank();
+//
+//		SparKonto spari1 = new SparKonto("111111", 3000);
+//		GiroKonto giro1 = new GiroKonto("222222", 1500, -500);
+//		SparKonto spari2 = new SparKonto("333333", 5300);
+//		GiroKonto giro2 = new GiroKonto("444444", -600, -750);
+//		
+//		bank.kontoHinzufuegen(spari1);
+//		bank.kontoHinzufuegen(giro1);
+//		bank.kontoHinzufuegen(spari2);
+//		bank.kontoHinzufuegen(giro2);
+//
+//		bank.zeigeAlleKonten();
+//
+//		bank.kontoEntfernen("111111");
+//		bank.kontoEntfernen("333333");
+//
+//		bank.zeigeAlleKonten();
+//
+//		bank.getKonto("222222");
+//
+//		bank.getKonto("999999");
+//		
+		// Methode randomKonto für eine bestimmte Anzahl zufällig generierter Konten
+		// erstellen
+//		Bankkonto zufallsKonten = new Bankkonto();
+//		
+//		zufallsKonten.randomKonto(5);
 
 		Bank bank = new Bank();
 
-		SparKonto spari1 = new SparKonto("111111", 3000);
-		GiroKonto giro1 = new GiroKonto("222222", 1500, -500);
-		SparKonto spari2 = new SparKonto("333333", 5300);
-		GiroKonto giro2 = new GiroKonto("444444", -600, -750);
-		
-		bank.kontoHinzufuegen(spari1);
-		bank.kontoHinzufuegen(giro1);
-		bank.kontoHinzufuegen(spari2);
-		bank.kontoHinzufuegen(giro2);
+		Scanner scanner = new Scanner(System.in);
 
-		bank.zeigeAlleKonten();
+		String input = "";
 
-		bank.kontoEntfernen("111111");
-		bank.kontoEntfernen("333333");
+		while (!input.equals("99")) {
+			System.out.println(
+					"Geben Sie eine Zahl ein:\n1: Konto hinzufügen\n2: Konto anzeigen\n3: Alle Konten anzeigen\n4: Konto löschen\n99: Beenden des Programms.");
 
-		bank.zeigeAlleKonten();
+			String auswahl = scanner.nextLine();
 
-		bank.getKonto("222222");
+			// Konto hinzufügen
+			if (auswahl.equals("1")) {
+				System.out.println(
+						"Konto hinzufügen:\nFür ein neues Girokonto wählen Sie die 1\nFür ein neues Sparkonto wählen Sie die 2");
 
-		bank.getKonto("999999");
-		
-		Bankkonto zufallsKonten = new Bankkonto();
-		
-		zufallsKonten.randomKonto(5);
+				String auswahl2 = scanner.nextLine();
 
+				if (auswahl2.equals("1")) {
+					System.out.println("Neues Girokonto erstellen:");
+					System.out.println("Kontonummer: ");
+					String kontonummer = scanner.nextLine();
+					System.out.println("Kontostand: ");
+					double kontostand = scanner.nextDouble();
+					GiroKonto giro = new GiroKonto(kontonummer, kontostand);
+					bank.kontoHinzufuegen(giro);
+					System.out.println("Girokonto hinzugefügt:\n" + giro);
+
+				} else if (auswahl2.equals("2")) {
+					System.out.println("Neues Sparkonto erstellen:");
+					System.out.println("Kontonummer: ");
+					String kontonummer = scanner.nextLine();
+					System.out.println("Kontostand: ");
+					double kontostand = scanner.nextDouble();
+					SparKonto giro = new SparKonto(kontonummer, kontostand);
+					bank.kontoHinzufuegen(giro);
+					System.out.println("Sparkonto hinzugefügt:\n" + giro);
+				} else {
+					break;
+				}
+
+				// Konto anzeigen
+			} else if (auswahl.equals("2")) {
+				System.out.println("Konto anzeigen:\nGeben Sie hierfür die Kontonr. an: ");
+				String auswahl3 = scanner.nextLine();
+				bank.getKonto(auswahl3);
+
+				// Alle Konten anzeigen
+			} else if (auswahl.equals("3")) {
+				bank.zeigeAlleKonten();
+
+				// Konto löschen
+			} else if (auswahl.equals("4")) {
+				// Konto löschen
+				System.out.println("Konto anzeigen:\nGeben Sie hierfür die Kontonr. ein: ");
+				String auswahl4 = scanner.nextLine();
+				bank.getKonto(auswahl4);
+
+				System.out.println("Konto löschen? Bestätigen Sie, indem Sie die Kontonr. noch einmmal eingeben: ");
+				String auswahl5 = scanner.nextLine();
+				bank.kontoEntfernen(auswahl5);
+
+			}
+
+		}
+
+		scanner.close();
 	}
 
 }

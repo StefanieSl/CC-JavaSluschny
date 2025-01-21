@@ -14,8 +14,8 @@ public class Bank {
 
 	public void kontoHinzufuegen(Bankkonto konto) {
 		konten.add(konto);
-		System.out.println("Konto hinzugefügt:");
-		System.out.println(konto);
+		//System.out.println("Konto hinzugefügt:");
+		//System.out.println(konto);
 	}
 
 	public void kontoEntfernen(String kontonummer) {
