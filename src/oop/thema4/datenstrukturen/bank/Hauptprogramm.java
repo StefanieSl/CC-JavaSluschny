@@ -39,6 +39,10 @@ public class Hauptprogramm {
 		bank.getKonto("222222");
 
 		bank.getKonto("999999");
+		
+		Bankkonto zufallsKonten = new Bankkonto();
+		
+		zufallsKonten.randomKonto(5);
 
 	}
 

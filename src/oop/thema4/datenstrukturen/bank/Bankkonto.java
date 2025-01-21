@@ -1,8 +1,11 @@
 package oop.thema4.datenstrukturen.bank;
 
-abstract class Bankkonto {
+import java.util.Random;
+
+public class Bankkonto {
 
 	protected String kontonummer;
+	protected int kontonummerInt;
 	protected double kontostand;
 
 	// Leerer Konstruktor, damit Unterklassen nicht gezwungen sind, den unteren
@@ -34,8 +37,52 @@ abstract class Bankkonto {
 		}
 		this.kontostand = kontostand;
 	}
+	
+	public void randomKonto(int anzahl) {
+		
+		// Um eine bestimmte "anzahl" Konten zu generieren
+		for (int i = 0; i < anzahl; i++) {
+			
+			// Generiere Zufallsgenerator für Kontoart (Spar/Giro)
+			Random randomBool = new Random();
+			boolean sparTrue = randomBool.nextBoolean();
+			
+			if(sparTrue == true) {
+				SparKonto spari = new SparKonto(randomKontonr(), randomKontostand());
+				System.out.println("Generiertes Konto Nr. " + (i+1) + ": Sparkonto\n" + spari);
+			} else {
+				GiroKonto giro = new GiroKonto(randomKontonr(), randomKontostand());
+				System.out.println("Generiertes Konto Nr. " + (i+1) + ": Girokonto\n" + giro);
+			}
+		}
 
-	public abstract void abrechnung();
+	}
+	
+	public String randomKontonr() {
+		Random randomInt = new Random();
+		
+        // Generiere zufällige Kontonr.
+        int randomNr = randomInt.nextInt(1000000);
+        // Speichere neue Kontonr. als String in kontonummer
+        kontonummer = Integer.toString(randomNr);
+        
+        return kontonummer;
+        
+	}
+	
+	public double randomKontostand() {
+		Random randomDouble = new Random();
+		
+		// Generiere zufälligen Kontostand
+        double randomStand = randomDouble.nextDouble(1000.00, 10001.00);
+        // Speichere zufälligen Kontostand in kontostand
+        kontostand = Math.round(randomStand * 100.0) / 100.0;
+        
+        return kontostand;
+	}
+
+	public void abrechnung() {
+	}
 
 	public void einzahlen(double betrag) {
 		this.kontostand += betrag;

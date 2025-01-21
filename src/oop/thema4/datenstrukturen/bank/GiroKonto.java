@@ -10,6 +10,11 @@ public class GiroKonto extends Bankkonto implements Ueberziehbar {
 		this.dispoLimit = dispoLimit;
 	}
 
+	public GiroKonto(String kontonummer, double kontostand) {
+		this.kontonummer = kontonummer;
+		this.kontostand = kontostand;
+	}
+
 	@Override
 	public void ueberziehungPruefen() {
 		if (this.kontostand < 0 && this.kontostand >= dispoLimit) {

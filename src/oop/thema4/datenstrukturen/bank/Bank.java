@@ -21,7 +21,7 @@ public class Bank {
 	public void kontoEntfernen(String kontonummer) {
 		// um zu prüfen, ob die Kontonummer gefunden wurde:
 		boolean kontoGefunden = false;
-		
+
 		for (int i = 0; i < konten.size(); i++) {
 			if (konten.get(i).kontonummer.equals(kontonummer)) {
 				konten.remove(i);
@@ -31,7 +31,7 @@ public class Bank {
 			}
 		}
 		if (!kontoGefunden) {
-	        System.out.println("Konto mit Kontonr. " + kontonummer + " wurde nicht gefunden.\n");
+			System.out.println("Konto mit Kontonr. " + kontonummer + " wurde nicht gefunden.\n");
 		}
 	}
 
@@ -59,4 +59,5 @@ public class Bank {
 			System.out.println(konto); // alternativ: System.out.println(konten.get(i));
 		}
 	}
+
 }
