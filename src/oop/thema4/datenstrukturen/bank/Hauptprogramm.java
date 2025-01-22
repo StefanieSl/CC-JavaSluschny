@@ -57,7 +57,7 @@ public class Hauptprogramm {
 
 		while (!input.equals("99")) {
 			System.out.println(
-					"Geben Sie eine Zahl ein:\n1: Konto hinzufügen\n2: Konto anzeigen\n3: Alle Konten anzeigen\n4: Konto löschen\n99: Beenden des Programms.");
+					"Hauptmenü: Geben Sie eine Zahl ein:\n1: Konto hinzufügen\n2: Konto anzeigen\n3: Alle Konten anzeigen\n4: Konto löschen\n99: Beenden des Programms.");
 
 			String auswahl = scanner.nextLine();
 
@@ -72,8 +72,22 @@ public class Hauptprogramm {
 					System.out.println("Neues Girokonto erstellen:");
 					System.out.println("Kontonummer: ");
 					String kontonummer = scanner.nextLine();
-					System.out.println("Kontostand: ");
-					double kontostand = scanner.nextDouble();
+
+					// Mit Try-Catch-Methode, um Fehler zu vermeiden, wenn kein boolean eingegeben
+					double kontostand = 0;
+					boolean validInput = false;
+
+					while (!validInput) {
+						try {
+							System.out.println("Kontostand: ");
+							// Eingabe als String lesen und in Double umwandeln
+							kontostand = Double.parseDouble(scanner.nextLine());
+							validInput = true; // Eingabe war korrekt, Schleife beenden
+						} catch (NumberFormatException e) {
+							System.err.println("Ungültige Eingabe. Bitte geben Sie eine Zahl ein.");
+						}
+					}
+
 					GiroKonto giro = new GiroKonto(kontonummer, kontostand);
 					bank.kontoHinzufuegen(giro);
 					System.out.println("Girokonto hinzugefügt:\n" + giro);
@@ -82,13 +96,26 @@ public class Hauptprogramm {
 					System.out.println("Neues Sparkonto erstellen:");
 					System.out.println("Kontonummer: ");
 					String kontonummer = scanner.nextLine();
-					System.out.println("Kontostand: ");
-					double kontostand = scanner.nextDouble();
+
+					// Mit Try-Catch-Methode, um Fehler zu vermeiden, wenn kein boolean eingegeben
+					double kontostand = 0;
+					boolean validInput = false;
+
+					while (!validInput) {
+						try {
+							System.out.println("Kontostand: ");
+							// Eingabe als String lesen und in Double umwandeln
+							kontostand = Double.parseDouble(scanner.nextLine());
+							validInput = true; // Eingabe war korrekt, Schleife beenden
+						} catch (NumberFormatException e) {
+							System.err.println("Ungültige Eingabe. Bitte geben Sie eine Zahl ein.");
+						}
+					}
+
 					SparKonto giro = new SparKonto(kontonummer, kontostand);
 					bank.kontoHinzufuegen(giro);
 					System.out.println("Sparkonto hinzugefügt:\n" + giro);
-				} else {
-					break;
+
 				}
 
 				// Konto anzeigen
@@ -103,7 +130,6 @@ public class Hauptprogramm {
 
 				// Konto löschen
 			} else if (auswahl.equals("4")) {
-				// Konto löschen
 				System.out.println("Konto anzeigen:\nGeben Sie hierfür die Kontonr. ein: ");
 				String auswahl4 = scanner.nextLine();
 				bank.getKonto(auswahl4);
@@ -112,6 +138,8 @@ public class Hauptprogramm {
 				String auswahl5 = scanner.nextLine();
 				bank.kontoEntfernen(auswahl5);
 
+			} else {
+				break;
 			}
 
 		}
