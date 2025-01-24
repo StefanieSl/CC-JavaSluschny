@@ -1,18 +1,4 @@
-package BMI_Rechner;
-
-<<<<<<< HEAD
-public class BMImScanner {
-	
-	public static void main(String[] args) {
-		System.out.println("BMI Calculator");
-		
-		Scanner scanner = new Scanner(System.in);
-		double weight = 80.5;
-		double height = 1.75;
-		
-		double bmi = weight / (height * height);
-		System.out.println("BMI is: " + bmi);
-=======
+package thema2.grundlagen.bmirechner;
 import java.util.Scanner;
 
 public class BMImScanner {
@@ -34,6 +20,5 @@ public class BMImScanner {
 
 		scanner.close();
 
->>>>>>> 1a9d5d4471db069fb603a317d9f180dacf512bf4
 	}
 }

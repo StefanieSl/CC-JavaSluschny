@@ -1,17 +1,36 @@
 package oop.thema4.datenstrukturen.tictactoe;
 
-public abstract class Board {
+public class Board {
+
+	private Symbol[][] spielfeld;
+
+	public Board() {
+
+	}
 
 	// Platziert ein Symbol auf dem Spielfeld
-	abstract boolean makeMove(int row, int col, Symbol symbol);
-	
+	public boolean makeMove(int row, int col, Symbol symbol) {
+		return false;
+	}
+
 	// Gibt das Spielfeld in der Konsole aus
-	abstract void printBoard();
-	
+	public void printBoard() {
+		for (int i = 0; i < spielfeld.length; i++) {
+			for (int j = 0; j < spielfeld[i].length; j++) {
+				System.out.print(spielfeld[i][j] + " ");
+			}
+			System.out.println(); // Zeilenumbruch nach 3
+		}
+	}
+
 	// Überprüft, ob ein Spieler gewonnen hat
-	abstract boolean checkWin(Symbol symbol);
-	
+	public boolean checkWin(Symbol symbol) {
+		return false;
+	}
+
 	// Überprüft, ob das Spielfeld voll ist
-	abstract boolean isFull();
-	
+	public boolean isFull() {
+		return false;
+	}
+
 }

@@ -3,19 +3,15 @@ package oop.thema4.datenstrukturen.tictactoe;
 public abstract class AbstractPlayer implements Player {
 
 	protected String name;
-	protected char symbol;
+	protected Enum<Symbol> symbol;
 	
 	// Konstruktor für die Initialisierung
-	public AbstractPlayer (String name, char symbol) {
-		this.name = name;
-		this.symbol = symbol;
+	public AbstractPlayer () {
 	}
 	
 	// Gibt das Symbol des Spielers zurück
 	@Override
-	public Symbol getSymbol() {
-		return null;
-	}
+	public abstract Symbol getSymbol();
 
 	// Gibt an, ob der Spieler menschlich ist
 	@Override

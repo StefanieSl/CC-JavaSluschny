@@ -1,4 +1,4 @@
-package BMI_Rechner;
+package thema2.grundlagen.bmirechner;
 
 import utils.IO;
 
