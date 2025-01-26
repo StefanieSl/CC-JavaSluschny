@@ -7,10 +7,7 @@ public class GroessteZahlSwitch {
 		int zahl1 = 2, zahl2 = 30 , zahl3 = 248;
 		int groesste;
 		
-		switch(Math.max(zahl2, zahl3)) {
-
-		}
-
+		// switch(Math.max(zahl2, zahl3)
 	}
 
 }

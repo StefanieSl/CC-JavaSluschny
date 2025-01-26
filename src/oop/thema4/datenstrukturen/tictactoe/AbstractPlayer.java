@@ -2,8 +2,8 @@ package oop.thema4.datenstrukturen.tictactoe;
 
 public abstract class AbstractPlayer implements Player {
 
-	protected String name;
-	protected Enum<Symbol> symbol;
+	public String name;
+	public Enum<Symbol> symbol;
 	
 	// Konstruktor für die Initialisierung
 	public AbstractPlayer () {
