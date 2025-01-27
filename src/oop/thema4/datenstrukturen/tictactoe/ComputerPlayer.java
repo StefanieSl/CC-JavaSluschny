@@ -17,8 +17,8 @@ public class ComputerPlayer extends AbstractPlayer {
 	
 	@Override
 	public void makeMove(Board board) {
-		int row = randomRow.nextInt(3);
-		int col = randomCol.nextInt(3);
+		int row = randomRow.nextInt(GameConfig.boardSize);
+		int col = randomCol.nextInt(GameConfig.boardSize);
 			
 		if (board.makeMove(row, col, getSymbol()) == false) {
 			makeMove(board);
