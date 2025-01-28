@@ -4,8 +4,6 @@ import java.util.Random;
 
 public class ComputerPlayer extends AbstractPlayer {
 
-	public String name;
-	public Enum<Symbol> symbol;
 	public Random randomRow = new Random();
 	public Random randomCol = new Random();
 	

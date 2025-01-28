@@ -1,7 +1,5 @@
 package oop.thema4.datenstrukturen.tictactoe.dozent;
 
-import java.util.Arrays;
-
 public class Board {
 
 	// 2D-Array für Spielfeld

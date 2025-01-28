@@ -1,6 +1,5 @@
 package oop.thema4.datenstrukturen.tictactoe.dozent;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class HumanPlayer extends AbstractPlayer {

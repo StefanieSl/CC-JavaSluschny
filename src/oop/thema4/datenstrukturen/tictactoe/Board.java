@@ -15,7 +15,7 @@ public class Board implements GameConfig {
 
 	// Platziert ein Symbol auf dem Spielfeld
 	public boolean makeMove(int row, int col, Symbol symbol) {
-		if (board[row][col] == Symbol.LEER) {
+		if (board[row][col] == Symbol.LEER && row >= 0 && row < boardSize && col >= 0 && col < boardSize) {
 			board[row][col] = symbol;
 			
 			if (checkWin(Symbol.X)) {

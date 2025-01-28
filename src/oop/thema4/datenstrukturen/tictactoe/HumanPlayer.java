@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class HumanPlayer extends AbstractPlayer {
 
 	Scanner scanner = new Scanner(System.in);
-	String name;
-	public Enum<Symbol> symbol;
 
 	public HumanPlayer() {
 		super();
@@ -31,6 +29,7 @@ public class HumanPlayer extends AbstractPlayer {
 		} catch (InputMismatchException e) {
 			System.out.println("Ungültige Eingabe. Bitte gib zwei Zahlen von 1 bis 3 ein.");
 			scanner.nextLine();
+			makeMove(board);
 		}
 
 	}
