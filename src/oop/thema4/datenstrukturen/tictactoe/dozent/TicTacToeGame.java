@@ -22,7 +22,7 @@ public class TicTacToeGame {
 			
 			if(board.checkWin(currentPlayer.getSymbol())) {
 				board.printBoard();
-				System.out.println(currentPlayer.getSymbol() + "gewinnt!");
+				System.out.println(currentPlayer.getSymbol() + " gewinnt!");
 				return;
 			}
 			

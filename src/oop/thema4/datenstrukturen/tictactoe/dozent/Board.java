@@ -48,7 +48,7 @@ public class Board {
 	public void printBoard() {
 		for (int i = 0; i < GameConfig.BOARD_SIZE; i++) { // Zeilen
 			for (int j = 0; j < GameConfig.BOARD_SIZE; j++) { // Spalten in jeder Zeile
-				System.out.print(board[i][j] == null ? "-" : board[i][j] + " ");
+				System.out.print(board[i][j] == null ? "-" : board[i][j] + "");
 			}
 			System.out.println();
 		}
