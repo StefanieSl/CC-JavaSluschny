@@ -20,12 +20,20 @@ public class HumanPlayer extends AbstractPlayer {
 			int row = scanner.nextInt() - 1;
 			int col = scanner.nextInt() - 1;
 
-			if (board.makeMove(row, col, getSymbol()) == false) {
-				makeMove(board);
+			if (row >= 0 && row < GameConfig.boardSize && col >= 0 && col < GameConfig.boardSize) {
+				
+				if (board.makeMove(row, col, getSymbol()) == false) {
+					makeMove(board);
+				} else {
+					System.out.println();
+				}
 			} else {
-				System.out.println();
+				System.out.println("Ungültige Eingabe. Bitte gib zwei Zahlen von 1 bis 3 ein.");
+				scanner.nextLine();
+				makeMove(board);
 			}
-
+			
+			
 		} catch (InputMismatchException e) {
 			System.out.println("Ungültige Eingabe. Bitte gib zwei Zahlen von 1 bis 3 ein.");
 			scanner.nextLine();

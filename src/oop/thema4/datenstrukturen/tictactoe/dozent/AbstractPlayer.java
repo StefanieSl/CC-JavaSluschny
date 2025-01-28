@@ -25,7 +25,7 @@ public abstract class AbstractPlayer implements Player {
 		return name;
 	}
 	
-//	Wir nicht unbeding benötigt, da Name über den Konstruktor schon gesetzt
+//	Wird nicht unbeding benötigt, da Name über den Konstruktor schon gesetzt
 //	public void setName(String name) {
 //		this.name = name;
 //	}
