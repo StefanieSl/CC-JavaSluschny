@@ -16,18 +16,28 @@ public class Telefonbuch {
 	}
 
 	public void printKontaktliste() {
-		System.out.println("Kontaktliste: " + kontaktliste);;
+		System.out.println("Kontaktliste: ");
+		for (Kontakt kontakt : kontaktliste) {
+			System.out.println(kontakt);
+		}
 	}
 	
-	public boolean sucheKontakt(String name) {
-		for (int i = 0; i < kontaktliste.size(); i++) {
-			if (kontaktliste.contains(name)) {
-				System.out.println(kontaktliste.get(i));
-				return true;
+	public Kontakt sucheKontakt(String name) {
+		for (Kontakt kontaktSuche : kontaktliste) {
+			if (kontaktSuche.getNachname().equals(name) || kontaktSuche.getVorname().equals(name)) {
+				return kontaktSuche;
 			}
-		}
-		
-		return false;
+		} return null;
+
+	}
+	
+	public void sucheUndzeigeKontakt(String name) {
+	    Kontakt gefundenerKontakt = sucheKontakt(name);
+	    if (gefundenerKontakt != null) {
+	        System.out.println("Gefundener Kontakt: " + gefundenerKontakt);
+	    } else {
+	        System.out.println("Kein Kontakt gefunden!");
+	    }
 	}
 	
 }

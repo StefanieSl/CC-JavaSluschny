@@ -7,12 +7,12 @@ public class TelefonbuchHauptprogramm {
 		
 		Telefonbuch tel = new Telefonbuch();
 		
-//		tel.kontaktHinzufuegen("Müller", "Karin", "01234567");
-//		tel.kontaktHinzufuegen("Meier", "Bill", "05678245");
-//		
-//		tel.printKontaktliste();
+		tel.kontaktHinzufuegen("Müller", "Karin", "01234567");
+		tel.kontaktHinzufuegen("Meier", "Bill", "05678245");
+		
+		tel.printKontaktliste();
 
-		tel.sucheKontakt("Müller");
+		tel.sucheUndzeigeKontakt("Bill");
 	}
 
 }
