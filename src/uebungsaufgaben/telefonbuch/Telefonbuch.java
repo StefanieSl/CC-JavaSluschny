@@ -24,7 +24,8 @@ public class Telefonbuch {
 	
 	public Kontakt sucheKontakt(String name) {
 		for (Kontakt kontaktSuche : kontaktliste) {
-			if (kontaktSuche.getNachname().equals(name) || kontaktSuche.getVorname().equals(name)) {
+			// toLowerCase() --> Groß-/Kleinschreibung spielt keine Rolle
+			if (kontaktSuche.getNachname().toLowerCase().equals(name) || kontaktSuche.getVorname().toLowerCase().equals(name)) {
 				return kontaktSuche;
 			}
 		} return null;

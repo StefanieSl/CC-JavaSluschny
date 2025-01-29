@@ -12,7 +12,7 @@ public class TelefonbuchHauptprogramm {
 		
 		tel.printKontaktliste();
 
-		tel.sucheUndzeigeKontakt("Bill");
+		tel.sucheUndzeigeKontakt("karin");
 	}
 
 }
